@@ -1,3 +1,8 @@
+# This program blinks an LED connected to Raspberry PI 100 times.
+#
+# Connect pin 11 to LED+ and ground to LED-
+#
+
 import RPi.GPIO as GPIO
 from time import sleep
 
