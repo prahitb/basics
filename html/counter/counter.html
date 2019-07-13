@@ -1,0 +1,36 @@
+<!Doctype HTML>
+<html>
+  <head>
+    <title>Counter</title>
+  </head>
+  <body>
+    <h1>Number Counter</h1>
+    <h3>Counter
+      <input type="text" id="txtCounter" value="0"  />
+    <h3>
+    <br>
+    <button onClick="increaseCounter()">Increase</button>
+    <button onClick="decreaseCounter()">Decrease</button>
+    <button onClick="resetCounter()">Reset</button>
+    <script>
+      function increaseCounter(){
+	  var counter;
+	  counter = document.getElementById("txtCounter").value;
+	  counter = parseInt(counter)+1
+	  document.getElementById("txtCounter").value=counter
+      }
+      function decreaseCounter(){
+	  var counter;
+	  counter = document.getElementById("txtCounter").value;
+	  counter = parseInt(counter)-1
+	  document.getElementById("txtCounter").value=counter
+      }
+      function resetCounter(){
+	  var counter;
+	  counter = document.getElementById("txtCounter").value;
+	  counter = 0
+	  document.getElementById("txtCounter").value=counter
+      }
+    </script>
+  </body>
+</html>
