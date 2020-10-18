@@ -1,0 +1,25 @@
+<!Doctype HTML>
+<html>
+<title>Tax Calculator</title>
+<h1>Welcome to the tax calculator</h1>
+<h2>Enter your income</h2>
+<input type="text" id="A1">
+<button type="submit" id="B1" onclick="calculate()">submit</button>
+<script>
+  function calculate() {
+      var income;
+      var tax=0;
+      income = document.getElementById("A1").value;
+      if (income>20000) {
+	    if (income>50000) {
+	      tax=(income - 50000)*0.3 + 30000*0.2;
+	    } else {
+	      tax = (income-20000)*0.2;
+
+	    }
+      }
+      document.getElementById("itax").innerHTML ="Your income tax is $" + tax;
+  }
+</script>
+<h2 id="itax">Your income tax is <h2>
+</html>
