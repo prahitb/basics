@@ -1,0 +1,7 @@
+{
+    "name": "TenBookstore",
+    "version": "1.0.0",
+    "dependencies": {
+        "http": "0.0.1-security"
+    }
+}
