@@ -14,7 +14,6 @@ app.get("/guhan", function( req, res) {
 	});
 })
 
-
 app.get("/prahit", function( req, res) {
 	res.write("Hello Prahit", function() {
 		res.end();
