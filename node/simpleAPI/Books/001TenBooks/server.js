@@ -1,9 +1,9 @@
 var http = require("http");
 var redis = require("redis");
 var client=redis.createClient();
-
+var numResponses=0;
+var writeData="";
 myServer = http.createServer( function( req, res) {
-	console.log(req.url);
 	if ( req.url != "/") {
 		res.end(); 
 	} else {
@@ -13,23 +13,17 @@ myServer = http.createServer( function( req, res) {
 		console.log("Number of Books:" + numBooks);
 		for ( var i=0; i<numBooks; i++ ) {
 			book = books[i];
-			console.log(book);
 			client.hgetall(book, function(err, bookData) {
-				//console.log(bookData);
-				console.log(bookData.author);
-
-				writeData = book + "\t" +
+				writeData = writeData + book + "\t" +
 							bookData.author + "\t" +
 							bookData.title + "\t" + 
 							bookData.edition + "\t" +
 							bookData.publisher + "\n";
+				numResponses=numResponses+1
 
-				
-				res.write(writeData, function () {
-					if ( i == numBooks) {
-						res.end();
+					if ( numResponses == numBooks) {
+						res.end(writeData);
 					}
-				});
 			});
 		}
 	});

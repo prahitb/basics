@@ -2,7 +2,7 @@ var redis = require("redis");
 var client = redis.createClient();
 
 client.hmset( "books_table:isbn:9781119962595",
-				"author"	, " G Rauch",
+				"author"	, "G Rauch",
 				"title"		, "Smashing Node.js",
 				"edition"	, "First",
 				"publisher"	, "J Wiley & Sons",
