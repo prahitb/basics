@@ -3,7 +3,7 @@
 
 using namespace std;
 
-RegularPolygon::RegularPolygon(int __numOfSides,float __sideLength) {
+RegularPolygon::RegularPolygon(int __numOfSides, double __sideLength) {
   numOfSides=__numOfSides;
   sideLength=__sideLength;
 }
@@ -22,5 +22,4 @@ void RegularPolygon::print(){
   cout <<"\tinteriorAngle = " << interiorAngle() << '\n';
   cout << "\texteriorAngle = " << exteriorAngle()<< '\n';
   cout << "\tperimeter = " << perimeter() <<'\n';
-  cout << "--------------\t\t\t---------------\n";
 };
